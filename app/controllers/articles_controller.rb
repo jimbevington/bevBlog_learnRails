@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
   end
 
   def create
-
     @article = Article.new(article_params)
 
     if @article.save
@@ -52,7 +51,7 @@ class ArticlesController < ApplicationController
   private
   # specifies params that can and must be handled
     def article_params
-      params.require(:article).permit(:title, :text)
+      params.require(:article).permit(:title, :text, :category)
     end
 
 end

@@ -1,2 +1,7 @@
-<h1>Hello, Rails!</h1>
-<%= link_to 'My Blog', controller: 'articles' %>
+<h1>J Bevington</h1>
+
+<% @articles.each do |article| %>
+  <h2><%= article.title %></h2>
+  <p><%= article_preview(article.id) %></p>
+  <%= link_to "Read More", article_path(article) %>
+<% end %>
